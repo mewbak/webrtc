@@ -5,7 +5,7 @@ go 1.12
 require (
 	github.com/pion/datachannel v1.4.13
 	github.com/pion/dtls/v2 v2.0.0-rc.3
-	github.com/pion/ice v0.7.4
+	github.com/pion/ice v0.7.4-0.20191209095143-efd63222ca37
 	github.com/pion/logging v0.2.2
 	github.com/pion/quic v0.1.1
 	github.com/pion/rtcp v1.2.1
@@ -17,4 +17,5 @@ require (
 	github.com/stretchr/testify v1.4.0
 	golang.org/x/crypto v0.0.0-20191206172530-e9b2fee46413 // indirect
 	golang.org/x/net v0.0.0-20191207000613-e7e4b65ae663 // indirect
+	golang.org/x/sys v0.0.0-20191206220618-eeba5f6aabab // indirect
 )
