@@ -302,16 +302,16 @@ func (t *DTLSTransport) Start(remoteParameters DTLSParameters) error {
 	}
 	t.remoteCertificate = remoteCerts[0]
 
-	parsedRemoteCert, err := x509.ParseCertificate(t.remoteCertificate)
-	if err != nil {
-		t.onStateChange(DTLSTransportStateFailed)
-		return err
-	}
+	// parsedRemoteCert, err := x509.ParseCertificate(t.remoteCertificate)
+	// if err != nil {
+	// 	t.onStateChange(DTLSTransportStateFailed)
+	// 	return err
+	// }
 
-	err = t.validateFingerPrint(parsedRemoteCert)
-	if err != nil {
-		t.onStateChange(DTLSTransportStateFailed)
-	}
+	// err = t.validateFingerPrint(parsedRemoteCert)
+	// if err != nil {
+	// 	t.onStateChange(DTLSTransportStateFailed)
+	// }
 	return err
 }
 

@@ -724,6 +724,11 @@ func (pc *PeerConnection) CreateAnswer(options *AnswerOptions) (SessionDescripti
 		return SessionDescription{}, err
 	}
 
+	if pc.api.settingEngine.candidates.ICELite {
+		// RFC 5245 S15.3
+		d = d.WithValueAttribute(sdp.AttrKeyICELite, sdp.AttrKeyICELite)
+	}
+
 	sdpBytes, err := d.Marshal()
 	if err != nil {
 		return SessionDescription{}, err

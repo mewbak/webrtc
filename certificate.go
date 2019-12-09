@@ -24,6 +24,11 @@ type Certificate struct {
 	x509Cert   *x509.Certificate
 }
 
+// PreCannedCertificate ...
+func PreCannedCertificate(privateKey crypto.PrivateKey, x509Cert *x509.Certificate) Certificate {
+	return Certificate{privateKey, x509Cert}
+}
+
 // NewCertificate generates a new x509 compliant Certificate to be used
 // by DTLS for encrypting data sent over the wire. This method differs from
 // GenerateCertificate by allowing to specify a template x509.Certificate to
