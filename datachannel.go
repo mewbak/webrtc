@@ -200,6 +200,9 @@ func (d *DataChannel) Transport() *SCTPTransport {
 // After onOpen is complete check that the user called detach
 // and provide an error message if the call was missed
 func (d *DataChannel) checkDetachAfterOpen() {
+	d.mu.RLock()
+	defer d.mu.RUnlock()
+
 	if d.api.settingEngine.detach.DataChannels && !d.detachCalled {
 		d.log.Error("webrtc.DetachDataChannels() enabled but didn't Detach, call Detach from OnOpen")
 	}
